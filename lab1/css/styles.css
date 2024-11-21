@@ -1,0 +1,700 @@
+/* Подключение шрифтов */
+@font-face {
+  font-family: "ManropeBold";
+  src: url(../fonts/Manrope-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url(../fonts/Manrope-Regular.ttf);
+}
+
+@font-face {
+  font-family: "ManropeLight";
+  src: url(../fonts/Manrope-Light.ttf);
+}
+
+/* Сброс базовых стилей */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  outline: none;
+}
+
+/* Общие стили для всего приложения */
+
+body {
+  background: #040C18;
+  padding: 0 2rem;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a,
+button {
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+a:hover,
+button:hover {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+button:hover {
+  background-color: #ae67fa;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 60px;
+  color: #ae67fa;
+}
+
+h2 {
+  font-size: 34px;
+}
+
+h1,
+h2 {
+  font-family: "ManropeBold", sans-serif;
+  background: linear-gradient(90deg, #ae67fa 1.84%, #f49867 102.67%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h3 {
+  font-family: "ManropeBold", sans-serif;
+  color: #fff;
+  font-size: 24px;
+}
+
+h4 {
+  font-family: "ManropeBold", sans-serif;
+  color: #fff;
+  font-size: 18px;
+}
+
+p {
+  font-size: 16px;
+  color: #fff;
+}
+
+.btn {
+  display: flex;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.primary-btn {
+  background-color: #ff4820;
+}
+
+.section {
+  max-width: 1169px;
+  width: 100%;
+}
+
+.lined_header {
+  background: url("../assets/img/gradient_line.svg") no-repeat 0 0 transparent;
+  padding: 1rem 0;
+}
+
+/* Стили для Шапки */
+
+.header {
+  display: flex;
+  max-width: 1169px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 0;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  background: #040C18;
+}
+
+.header .header-logo {
+  width: 162px;
+}
+
+.header .header__menu .menu {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.header .header__menu .menu .menu__item a {
+  color: #fff;
+  border-bottom: 1px solid transparent;
+}
+
+.header .header__menu .menu .menu__item:hover a {
+  border-bottom-color: #fff;
+}
+
+.header .header__menu .menu .menu__item.active a {
+  color: #f49867;
+  border-bottom-color: #f49867;
+}
+
+.header .cta_buttons {
+  display: flex;
+  column-gap: 1rem;
+}
+
+
+/* Стили для первого экрана (Хиро секция) */
+
+.hero_section {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1rem;
+  min-height: 60vh;
+  margin: 14rem 0 3rem;
+}
+
+.hero_section .hero_section__left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 3rem;
+  width: 75%;
+}
+
+.hero_section .hero_section__left .left__description {
+  color: #81afdd;
+}
+
+.hero_section .hero_section__left .left__cta_buttons {
+  display: flex;
+  width: 100%;
+}
+
+.hero_section .hero_section__left .left__cta_buttons input[type="text"] {
+  min-width: 250px;
+  width: 70%;
+  padding: 8px 32px;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #052d56;
+  border-bottom: none;
+  background-color: #052d56;
+}
+
+.hero_section .hero_section__left .left__cta_buttons .btn {
+  border-radius: 0 4px 4px 0;
+}
+
+.hero_section .hero_section__right {
+  height: 100%;
+}
+
+.hero_section .hero_section__right img {
+  width: 100%;
+}
+
+.hero_section .left__social_approve {
+  display: flex;
+}
+
+.hero_section .left__social_approve p {
+  font-size: 12px;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.companies_section {
+  display: flex;
+  column-gap: 3rem;
+  justify-content: center;
+}
+
+/* Стили для экрана "Что такое GPT-3" */
+
+.gpt_description_section #rectangle {
+  display: flex;
+  flex-direction: column;
+  width: 1170px;
+  height: 695px;
+  background: #042C54;
+  margin-top: 147px;
+}
+
+.gpt_description_section .top_gpt_description {
+  display: flex;
+}
+
+.gpt_description_section .top_gpt_description .top_header {
+  margin-top: 57px;
+  margin-left: 57px;
+  flex: 30%;
+}
+
+.gpt_description_section .top_gpt_description .top_description {
+  display: flex;
+  color: #81AFDD;
+  flex: 70%;
+  line-height: 1.5;
+  margin-top: 67px;
+  margin-right: 60px;
+}
+
+.gpt_description_section .middle_gpt_description {
+  display: flex;
+  margin-top: 100px
+}
+
+.gpt_description_section .middle_gpt_description .middle_header {
+  display: flex;
+  margin-left: 57px;
+  width: 472px;
+  height: 90px;
+}
+
+.gpt_description_section .middle_gpt_description .library_link {
+  display: flex;
+  color: #FF8A71;
+  margin-top: 20px;
+  margin-left: 400px;
+  width: 196px;
+  height: 30px;
+}
+
+.gpt_description_section .middle_gpt_description a {
+  color: #FF8A71;
+  border-bottom: 1px solid transparent;
+}
+
+.gpt_description_section .middle_gpt_description a:hover {
+  border-bottom-color: #FF8A71;
+}
+
+.gpt_description_section .low_gpt_description {
+  display: flex;
+}
+
+.gpt_description_section .low_gpt_description .low_header {
+  margin-left: 57px;
+  margin-top: 100px;
+  width: 320px;
+}
+
+.gpt_description_section .low_gpt_description .low_description {
+  color: #81AFDD;
+  margin-top: 40px;
+  line-height: 1.8;
+  width: 330px;
+  height: 120px;
+}
+
+/* Стили для экрана "Будущее уже наступило" */
+
+.future_section {
+  display: flex;
+}
+
+.future_section .left_future {
+  display: flex;
+  flex-direction: column;
+  width: 45%
+}
+
+.future_section .left_future_header {
+  display: flex;
+  width: 426px;
+  height: 180px;
+  margin-top: 220px;
+}
+
+.future_section .left_future .early_access_link {
+  color: #FF8A71;
+  margin-top: 35px;
+  width: 200px;
+  height: 30px;
+}
+
+.future_section .left_future a {
+  color: #FF8A71;
+  border-bottom: 1px solid transparent;
+}
+
+.future_section .left_future a:hover {
+  border-bottom-color: #FF8A71;
+}
+
+.future_section .middle_future {
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  margin-top: 200px;
+}
+
+.future_section .middle_future .middle_header {
+  margin: 20px;
+  width: 200px;
+  height: 70px;
+}
+
+.future_section .right_future {
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+  margin-top: 195px;
+}
+
+.future_section .right_future .future_description {
+  display: flex;
+  margin: 28px;
+}
+
+.future_section .right_future .future_description p {
+  font-size: 14px;
+  color: #81AFDD
+}
+
+/* Стили для экрана "Превосходя все ожидания" */
+
+.early_access_section {
+  display: flex;
+  margin-left: 70px;
+}
+
+.early_access_section .left_early_access {
+  display: flex;
+  margin-top: 60px;
+  width: 50%;
+}
+
+.early_access_section .right_early_access  {
+  margin-top: 280px;
+  width: 50%;
+}
+
+.early_access_section .right_early_access h2 {
+  margin-top: 15px;
+  width: 420px;
+  height: 90px;
+}
+
+.early_access_section .right_early_access .request {
+  color: #71E5FF;
+}
+
+.early_access_section .right_early_access .some_text {
+  color: #81AFDD;
+  margin-top: 30px;
+  width: 420px;
+  height: 120px;
+  line-height: 1.8;
+}
+
+.early_access_section .right_early_access .early_access_link {
+  display: flex;
+  color: #FF8A71;
+  margin-top: 35px;
+  width: 200px;
+  height: 30px;
+}
+
+.early_access_section .right_early_access a {
+  color: #FF8A71;
+  border-bottom: 1px solid transparent;
+}
+
+.early_access_section .right_early_access a:hover {
+  border-bottom-color: #FF8A71;
+}
+
+.early_access_rectangle #rectangle {
+  display: flex;
+  margin-top: 150px;
+  width: 1170px;
+  height: 172.65px;
+  background: linear-gradient(to right, #AE67FA, #F49867);
+  border-radius: 10px;
+}
+
+.early_access_rectangle .earn_access_text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  margin-top: 30px;
+  flex: 83%;
+}
+
+.early_access_rectangle .earn_access_text .low_text {
+  display: flex;
+  font-size: 12px;
+  color: #0E0E0E;
+  font-weight: 500;
+}
+
+.early_access_rectangle .earn_access_text .main_text {
+  display: flex;
+  font-size: 24px;
+  color: #0E0E0E;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.early_access_rectangle .start_button {
+  display: flex;
+  width: 190px;
+  height: 60px;
+  margin-right: 30px;
+  margin-top: 60px;
+  background: #0E0E0E;
+  color: #fff;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+  flex: 17%;
+  border: none;
+}
+
+.early_access_rectangle .start_button:hover {
+  background-color: #ae67fa;
+}
+
+/* Стили для экрана с блогом */
+
+.blog_section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+}
+
+.blog_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.blog_section .main_blog {
+  display: flex;
+  flex-direction: column; 
+  margin-top: 100px;
+  flex: 40%; 
+}
+
+.blog_section .main_blog img {
+  width: 417.03px;
+  height: 287.34px;
+}
+
+.blog_section .main_blog #rectangle {
+  width: 417.03px;
+  height: 406.71px;
+  background: #042C54;
+}
+
+.blog_section .secondary_blog {
+  display: flex;
+  flex-wrap: wrap; 
+  flex: 60%; 
+  gap: 34px; 
+  margin-top: 100px;
+}
+
+.blog_section .secondary_blog .blog img {
+  display: flex;
+  margin-top: 5px;
+}
+
+.blog_section .secondary_blog .blog #rectangle {
+  display: flex;
+  width: 327.34px;
+  height: 193.37px;
+  background: #042C54;
+}
+
+.blog_section .main_blog .article_inf {
+  display: flex;
+  flex-direction: column;
+  margin-top: 35px;
+  margin-left: 20px;
+}
+
+.blog_section .main_blog .article_inf .date_text {
+  font-size: 11.65px;
+}
+
+.blog_section .main_blog .article_inf .article_header {
+  font-size: 25.11px;
+  margin-top: 10px;
+}
+
+.blog_section .main_blog .article_inf .article_link {
+  width: 130px;
+  font-size: 12px;
+  margin-top: 200px;
+}
+
+.blog_section .main_blog .article_inf a {
+  color: #fff;
+  border-bottom: 1px solid transparent;
+}
+
+.blog_section .main_blog .article_inf a:hover {
+  border-bottom-color: #fff;
+}
+
+.blog_section .secondary_blog .article_inf {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+.blog_section .secondary_blog .article_inf .date_text {
+  font-size: 11.65px;
+}
+
+.blog_section .secondary_blog .article_inf .article_header {
+  font-size: 19px;
+  margin-top: 10px;
+}
+
+.blog_section .secondary_blog .article_inf .article_link {
+  width: 130px;
+  font-size: 12px;
+  margin-top: 25px
+}
+
+.blog_section .secondary_blog .article_inf a {
+  color: #fff;
+  border-bottom: 1px solid transparent;
+}
+
+.blog_section .secondary_blog .article_inf a:hover {
+  border-bottom-color: #fff;
+}
+
+/* Стили для последнего экрана */
+
+.final_section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 120px;
+  justify-content: center;
+  align-items: center;
+  background-color: #031B34;
+  max-width: 1440px;
+  width: 100%;
+}
+
+.final_section .final_header {
+  display: flex;
+  text-align: center;
+  margin-top: 175px;
+}
+
+.final_section .request_access_button {
+  display: flex;
+  width: 337.58px;
+  height: 65px;
+  background: #031B34;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin-top: 75px;
+  border-color: #fff;
+}
+
+.final_section .request_access_button:hover {
+  background-color: #ae67fa;
+}
+
+.final_section .footer {
+  display: flex;
+  margin-top: 200px;
+  gap: 350px;
+  margin-bottom: 100px;
+}
+
+.final_section .footer_left {
+  display: flex;
+  flex-direction: column;
+}
+
+.final_section .footer_left img {
+  width: 118px;
+  height: 30px;
+}
+
+.final_section .footer_left .some_inf {
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.final_section .footer_right {
+  display: flex;
+  gap: 50px;
+}
+
+.final_section .footer_right .footer_inf {
+  display: flex;
+  flex-direction: column;
+}
+
+.final_section .footer_right .footer_inf h3 {
+  font-size: 14px;
+}
+
+.final_section .footer_right .footer_inf .footer_link {
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.final_section .footer_right .footer_inf .footer_inf {
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.final_section .footer_right .footer_inf a {
+  color: #fff;
+  border-bottom: 1px solid transparent;
+}
+
+.final_section .footer_right .footer_inf a:hover {
+  border-bottom-color: #fff;
+}
+
+.copyright {
+  font-size: 12px
+}
