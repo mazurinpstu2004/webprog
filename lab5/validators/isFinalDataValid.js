@@ -16,17 +16,16 @@ const isFinalDataValid = (data) => {
 
     isArrayHasLength(finalFooterRight);
 
-    finalFooterRight.forEach((column) => {
-        isObjectHasProps(column, ["title", "items"]);
-        isArrayHasLength(column.items);
-        column.items.forEach((item) => {
-            if (item.href && item.text) {
-                isObjectHasProps(item, ["href", "text"]);
-            } else {
-                isObjectHasProps(item, ["text"]);
-            }
-        });
+    finalFooterRight.forEach((footerSection) => {
+        isObjectHasProps(footerSection, ["title", "items"]);
+        isArrayHasLength(footerSection.items);
+
+        if (footerSection.title === "Контакты") {
+            footerSection.items.forEach(item => isObjectHasProps(item, ["text"]));
+        } else {
+            footerSection.items.forEach(item => isObjectHasProps(item, ["href", "text"]));
+        }
     });
 };
 
-module.exports = isFinalDataValid
+module.exports = isFinalDataValid;
