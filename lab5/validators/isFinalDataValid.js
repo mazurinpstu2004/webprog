@@ -4,26 +4,29 @@ const isFinalDataValid = (data) => {
     isObjectHasProps(data, [
         "finalHeader",
         "finalButton",
-        "finalFooterLeftImage",
-        "finalFooterLeftAddress",
-        "finalFooterLeftRights",
+        "finalFooterLeft",
         "finalFooterRight",
     ]);
 
-    const { finalButton, finalFooterLeftImage, finalFooterRight } = data;
+    const { finalButton, finalFooterLeft, finalFooterRight } = data;
 
     isObjectHasProps(finalButton, [ "href", "text" ]);
+    isObjectHasProps(finalFooterLeft, ["image", "address", "rights"]);
+    isObjectHasProps(finalFooterLeft.image, ["src", "alt"]);
 
-    isObjectHasProps(finalFooterLeftImage, [ "src", "alt" ]);
+    isArrayHasLength(finalFooterRight);
 
-    isArrayHasLength(finalFooterRight.link);
-    isArrayHasLength(finalFooterRight.company);
-    isArrayHasLength(finalFooterRight.contacts);
-
-    finalFooterRight.link.forEach((item) => isObjectHasProps(item, [ "href", "text" ]));
-    finalFooterRight.company.forEach((item) => isObjectHasProps(item, [ "href", "text" ]));
-    finalFooterRight.contacts.forEach((item) => isObjectHasProps(item, [ "text" ]));
-
-}
+    finalFooterRight.forEach((column) => {
+        isObjectHasProps(column, ["title", "items"]);
+        isArrayHasLength(column.items);
+        column.items.forEach((item) => {
+            if (item.href && item.text) {
+                isObjectHasProps(item, ["href", "text"]);
+            } else {
+                isObjectHasProps(item, ["text"]);
+            }
+        });
+    });
+};
 
 module.exports = isFinalDataValid

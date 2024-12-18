@@ -3,17 +3,15 @@ const { isArrayHasLength, isObjectHasProps } = require("./utils/validators");
 const isBlogDataValid = (data) => {
     isObjectHasProps(data, [
         "blogHeader",
-        "mainBlogPicture",
-        "mainBlogDate",
-        "mainBlogTitle",
+        "mainBlog",
         "secondaryBlog",
     ]);
 
-    const { mainBlogPicture, mainBlogLink, secondaryBlog } = data;
+    const { mainBlog, secondaryBlog } = data;
 
-    isObjectHasProps(mainBlogPicture, [ "src", "alt" ]);
-
-    isObjectHasProps(mainBlogLink, [ "href", "text" ]);
+    isObjectHasProps(mainBlog, ["image", "date", "title", "link"]);
+    isObjectHasProps(mainBlog.image, ["src", "alt"]);
+    isObjectHasProps(mainBlog.link, ["href", "text"]);
 
     isArrayHasLength(secondaryBlog);
 
