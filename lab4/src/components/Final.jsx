@@ -16,8 +16,8 @@ export const FinalButton = ({button: { href, text }}) => {
     );
 };
 
-export const FooterLeft = ({ item }) => {
-    const {image: { src, alt }, address, rights} = item
+export const FooterLeft = ({ data }) => {
+    const {image: { src, alt }, address, rights} = data
 
     return (
         <>
@@ -27,29 +27,29 @@ export const FooterLeft = ({ item }) => {
         </>
     );
 };
-export const FooterRight = ({ item }) => {
-    const { link, company, contacts } = item
-
-    return (
-        <>
-            <div className="footer_inf">
-                <h3>Ссылки</h3>
-                {link.map((item, index) => (<a key={index} href={item.href} className="footer_link">{item.text}</a>))}
-            </div>
-            <div className="footer_inf">
-                <h3>Компания</h3>
-                {company.map((item, index) => (<a key={index} href={item.href} className="footer_link">{item.text}</a>))}
-            </div>
-            <div className="footer_inf">
-                <h3>Контакты</h3>
-                {contacts.map((item, index) => (<p key={index} className="footer_inf">{item.text}</p>))}
-            </div>
-        </>
-    );
+export const FooterRight = ({ data }) => {
+    return data.map((column) => (
+        <div className="footer_inf">
+            <h3>{column.title}</h3>
+            {column.items.map((item) => {
+                if (item.href) {
+                    return (
+                        <a href={item.href} className="footer_link">
+                            {item.text}
+                        </a>
+                    );
+                } else {
+                    return (
+                        <p className="footer_inf">{item.text}</p>
+                    );
+                }
+            })}
+        </div>
+    ));
 };
 
 export const Final = () => {
-    const {finalHeader, finalButton, finalFooterLeftImage, finalFooterLeftAddress, finalFooterLeftRights, finalFooterRight } = finalData;
+    const {finalHeader, finalButton, finalFooterLeft, finalFooterRight  } = finalData;
 
     return (
         <>
@@ -57,14 +57,10 @@ export const Final = () => {
             <FinalButton button={finalButton} />
             <div className="footer">
                 <div className="footer_left">
-                    <FooterLeft item={{
-                        image: finalFooterLeftImage,
-                        address: finalFooterLeftAddress,
-                        rights: finalFooterLeftRights
-                    }} />
+                    <FooterLeft data={finalFooterLeft}/>
                 </div>
                 <div className="footer_right">
-                    <FooterRight item={finalFooterRight} />
+                    <FooterRight data={finalFooterRight}/>
                 </div>
             </div>
         </>

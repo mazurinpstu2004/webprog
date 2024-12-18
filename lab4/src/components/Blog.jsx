@@ -6,8 +6,8 @@ export const BlogHeader = ({ header }) => {
     );
 };
 
-export const MainBlog = ({ item }) => {
-    const { image: { src, alt }, date, title, link: { href, text } } = item;
+export const MainBlog = ({ data }) => {
+    const { image: { src, alt }, date, title, link: { href, text } } = data;
 
     return (
         <>
@@ -41,19 +41,14 @@ export const SecondaryBlog = ({ item }) => {
 };
 
 export const Blog = () => {
-    const { blogHeader, mainBlogPicture, mainBlogDate, mainBlogTitle, mainBlogLink, secondaryBlog } = blogData;
+    const { blogHeader, mainBlog, secondaryBlog } = blogData;
 
     return (
         <>
             <BlogHeader header={blogHeader} />
             <div className="blog_container">
                 <div className="main_blog">
-                    <MainBlog item={{
-                        image: mainBlogPicture,
-                        date: mainBlogDate,
-                        title: mainBlogTitle,
-                        link: mainBlogLink
-                    }} />
+                    <MainBlog data={mainBlog} />
                 </div>
                 <div className="secondary_blog">
                     {secondaryBlog.map((item, index) => (
