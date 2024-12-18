@@ -909,6 +909,20 @@ p {
     margin-top: 25px;
     gap: 20px
   }
+  .blog_section .blog_container .main_blog img {
+    width: 960px;
+    height: 400px;
+  }
+  .blog_section .blog_container .main_blog #rectangle {
+    width: 960px;
+  }
+  .blog_section .blog_container .secondary_blog #rectangle {
+    width: 960px;
+  }
+  .blog_section .blog_container .secondary_blog img {
+    width: 960px;
+    height: 350px;
+  }
   .final_section {
     margin-top: 60px;
   }
@@ -1018,6 +1032,12 @@ p {
     width: 700px;
     height: 80px;
   }
+
+  .early_access_section .right_early_access .early_access_link {
+    margin-top: 5px;
+    width: 150px;
+  }
+
   .early_access_rectangle #rectangle {
     width: 700px;
   }
@@ -1026,6 +1046,18 @@ p {
   }
   .blog_section {
     margin-top: 50px;
+  }
+  .blog_section .blog_container .main_blog img {
+    width: 704px;
+  }
+  .blog_section .blog_container .main_blog #rectangle {
+    width: 704px;
+  }
+  .blog_section .blog_container .secondary_blog #rectangle {
+    width: 704px;
+  }
+  .blog_section .blog_container .secondary_blog img {
+    width: 704px;
   }
   .final_section .footer {
     gap: 50px;
@@ -1036,9 +1068,15 @@ p {
     width: 100%;
   }
   .early_access_section .right_early_access .some_text {
-    width: 400px;
-    height: 100px;
+    width: 361px;
+    height: 130px;
   }
+
+  .early_access_section .right_early_access .early_access_link {
+    margin-top: 5px;
+    width: 150px;
+  }
+
   .early_access_rectangle #rectangle {
     display: flex;
     flex-direction: column;
@@ -1059,15 +1097,38 @@ p {
   .early_access_rectangle .earn_access_text .main_text {
     margin-top: 5px;
   }
+
+  .early_access_rectangle a {
+    margin-left: 25px;
+  }
+
   .early_access_rectangle .start_button {
     margin-top: 0;
     margin-bottom: 15px;
   }
-  .final_section .request_access_button {
-    width: 300px
-  }
   .blog_section h1 {
     text-align: center;
+  }
+  .blog_section .blog_container .main_blog img {
+    width: 361px;
+    height: 250px;
+  }
+  .blog_section .blog_container .main_blog #rectangle {
+    width: 361px;
+    height: 300px;
+  }
+  .blog_section .blog_container .main_blog #rectangle .article_link {
+    margin-top: 80px;
+  }
+  .blog_section .blog_container .secondary_blog #rectangle {
+    width: 361px;
+  }
+  .blog_section .blog_container .secondary_blog img {
+    width: 361px;
+    height: 175px;
+  }
+  .final_section .request_access_button {
+    width: 300px
   }
   .final_section .footer {
     display: flex;
